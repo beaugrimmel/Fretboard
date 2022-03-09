@@ -1,0 +1,51 @@
+body {
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(
+    0deg,
+    rgb(212, 206, 86) 25%,
+    rgb(222, 212, 209) 100%
+  );
+}
+
+#navbarDiv {
+  padding-bottom: 20px;
+}
+
+.navbar-brand {
+  font: Monaco;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: black;
+}
+
+.navbar-inner {
+  background: rgba(212, 206, 86, 0.307);
+}
+
+#title {
+  text-align: center;
+  font: Monaco;
+  padding: 25px;
+}
+
+#fretboardDiv {
+  text-align: center;
+  border: 1px solid rgba(0, 128, 0, 0.087);
+  padding: 100px;
+  background: #f0ead661;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+#ansButtonsDiv {
+  text-align: center;
+  padding: 25px;
+}
+
+#note {
+  text-align: center;
+  padding: 2px;
+}
