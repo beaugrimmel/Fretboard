@@ -3,10 +3,10 @@ export default class Board {
     this.tileSize = tileSize;
 
     this.fret = new Image();
-    this.fret.src = "../imgs/fret.png";
+    this.fret.src = "./imgs/fret.png";
 
     this.fretSelect = new Image();
-    this.fretSelect.src = "../imgs/fret-select.png";
+    this.fretSelect.src = "./imgs/fret-select.png";
   }
 
   // 0 - blank
