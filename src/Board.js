@@ -16,13 +16,8 @@ export default class Board {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   ];
-
-  setCanvasSize(canvas) {
-    canvas.width = this.map[0].length * this.tileSize;
-    canvas.height = this.map.length * this.tileSize;
-  }
 
   draw(ctx) {
     for (let row = 0; row < this.map.length; row++) {
@@ -36,6 +31,21 @@ export default class Board {
         }
       }
     }
+  }
+
+  setCanvasSize(canvas) {
+    canvas.width = this.map[0].length * this.tileSize;
+    canvas.height = this.map.length * this.tileSize;
+  }
+
+  selectRandomFret() {
+    var stringNum = this.#random(1, 6);
+    var fretNum = this.#random(1, 12);
+    this.map[stringNum - 1][fretNum - 1] = 1;
+  }
+
+  #random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   #drawFret(ctx, col, row, size) {
