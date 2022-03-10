@@ -30,132 +30,49 @@
         <h3>Identify the Note!</h3>
       </div>
       <div id="fretboardDiv">
-        <div class="stringDiv">
-          <div class="one"> <img src="imgs/fret.png"></div>
-          <div class="two"> <img src="imgs/fret.png"></div>
-          <div class="three"> <img src="imgs/fret.png"></div>
-          <div class="four"> <img src="imgs/fret.png"></div>
-          <div class="five"> <img src="imgs/fret.png"></div>
-          <div class="six"> <img src="imgs/fret.png"></div>
-          <div class="seven"><img src="imgs/fret.png"></div>
-          <div class="eight"><img src="imgs/fret.png"></div>
-          <div class="nine"><img src="imgs/fret.png"></div>
-          <div class="ten"><img src="imgs/fret.png"></div>
-          <div class="eleven"><img src="imgs/fret.png"></div>
-          <div class="twelve"><img src="imgs/fret.png"></div>
-        </div>
-        <div class="stringDiv">
-          <div class="one"> <img src="imgs/fret.png"></div>
-          <div class="two"> <img src="imgs/fret.png"></div>
-          <div class="three"> <img src="imgs/fret.png"></div>
-          <div class="four"> <img src="imgs/fret.png"></div>
-          <div class="five"> <img src="imgs/fret.png"></div>
-          <div class="six"> <img src="imgs/fret.png"></div>
-          <div class="seven"><img src="imgs/fret.png"></div>
-          <div class="eight"><img src="imgs/fret.png"></div>
-          <div class="nine"><img src="imgs/fret.png"></div>
-          <div class="ten"><img src="imgs/fret.png"></div>
-          <div class="eleven"><img src="imgs/fret.png"></div>
-          <div class="twelve"><img src="imgs/fret.png"></div>
-        </div>
-        <div class="stringDiv">
-          <div class="one"> <img src="imgs/fret.png"></div>
-          <div class="two"> <img src="imgs/fret.png"></div>
-          <div class="three"> <img src="imgs/fret.png"></div>
-          <div class="four"> <img src="imgs/fret.png"></div>
-          <div class="five"> <img src="imgs/fret.png"></div>
-          <div class="six"> <img src="imgs/fret.png"></div>
-          <div class="seven"><img src="imgs/fret.png"></div>
-          <div class="eight"><img src="imgs/fret.png"></div>
-          <div class="nine"><img src="imgs/fret.png"></div>
-          <div class="ten"><img src="imgs/fret.png"></div>
-          <div class="eleven"><img src="imgs/fret.png"></div>
-          <div class="twelve"><img src="imgs/fret.png"></div>
-        </div>
-        <div class="stringDiv">
-          <div class="one"> <img src="imgs/fret.png"></div>
-          <div class="two"> <img src="imgs/fret.png"></div>
-          <div class="three"> <img src="imgs/fret.png"></div>
-          <div class="four"> <img src="imgs/fret.png"></div>
-          <div class="five"> <img src="imgs/fret.png"></div>
-          <div class="six"> <img src="imgs/fret.png"></div>
-          <div class="seven"><img src="imgs/fret.png"></div>
-          <div class="eight"><img src="imgs/fret.png"></div>
-          <div class="nine"><img src="imgs/fret.png"></div>
-          <div class="ten"><img src="imgs/fret.png"></div>
-          <div class="eleven"><img src="imgs/fret.png"></div>
-          <div class="twelve"><img src="imgs/fret.png"></div>
-        </div>
-        <div class="stringDiv">
-          <div class="one"> <img src="imgs/fret.png"></div>
-          <div class="two"> <img src="imgs/fret.png"></div>
-          <div class="three"> <img src="imgs/fret.png"></div>
-          <div class="four"> <img src="imgs/fret.png"></div>
-          <div class="five"> <img src="imgs/fret.png"></div>
-          <div class="six"> <img src="imgs/fret.png"></div>
-          <div class="seven"><img src="imgs/fret.png"></div>
-          <div class="eight"><img src="imgs/fret.png"></div>
-          <div class="nine"><img src="imgs/fret.png"></div>
-          <div class="ten"><img src="imgs/fret.png"></div>
-          <div class="eleven"><img src="imgs/fret.png"></div>
-          <div class="twelve"><img src="imgs/fret.png"></div>
-        </div>
-        <div class="stringDiv">
-          <div class="one"> <img src="imgs/fret.png"></div>
-          <div class="two"> <img src="imgs/fret.png"></div>
-          <div class="three"> <img src="imgs/fret.png"></div>
-          <div class="four"> <img src="imgs/fret.png"></div>
-          <div class="five"> <img src="imgs/fret.png"></div>
-          <div class="six"> <img src="imgs/fret.png"></div>
-          <div class="seven"><img src="imgs/fret.png"></div>
-          <div class="eight"><img src="imgs/fret.png"></div>
-          <div class="nine"><img src="imgs/fret.png"></div>
-          <div class="ten"><img src="imgs/fret.png"></div>
-          <div class="eleven"><img src="imgs/fret.png"></div>
-          <div class="twelve"><img src="imgs/fret.png"></div>
-        </div>
+        <canvas id="gamecanvas"></canvas>
       </div>
       <div id="ansButtonsDiv">
         <div class="row justify-content-center" id="notes">
           <div class="col-md-auto" id="note">
-            <button type="button" class="btn btn-light">A</button>
+            <button type="button" class="btn btn-light" id="1">A</button>
           </div>
           <div class="col-md-auto" id="note">
-            <button type="button" class="btn btn-dark">A#</button>
+            <button type="button" class="btn btn-dark" id="2">A#</button>
           </div>
           <div class="col-md-auto" id="note">
-            <button type="button" class="btn btn-light">B</button>
+            <button type="button" class="btn btn-light" id="3">B</button>
           </div>
           <div class="col-md-auto" id="note">
-            <button type="button" class="btn btn-light">C</button>
+            <button type="button" class="btn btn-light"id="4">C</button>
           </div>
           <div class="col-md-auto" id="note">
-            <button type="button" class="btn btn-dark">C#</button>
+            <button type="button" class="btn btn-dark"id="5">C#</button>
           </div>
           <div class="col-md-auto" id="note">
-            <button type="button" class="btn btn-light">D</button>
+            <button type="button" class="btn btn-light"id="6">D</button>
           </div>
           <div class="col-md-auto" id="note">
-            <button type="button" class="btn btn-dark">D#</button>
+            <button type="button" class="btn btn-dark"id="7">D#</button>
           </div>
           <div class="col-md-auto" id="note">
-            <button type="button" class="btn btn-light">E</button>
+            <button type="button" class="btn btn-light"id="8">E</button>
           </div>
           <div class="col-md-auto" id="note">
-            <button type="button" class="btn btn-light">F</button>
+            <button type="button" class="btn btn-light"id="9">F</button>
           </div>
           <div class="col-md-auto" id="note">
-            <button type="button" class="btn btn-dark">F#</button>
+            <button type="button" class="btn btn-dark"id="10">F#</button>
           </div>
           <div class="col-md-auto" id="note">
-            <button type="button" class="btn btn-light">G</button>
+            <button type="button" class="btn btn-light"id="11">G</button>
           </div>
           <div class="col-md-auto" id="note">
-            <button type="button" class="btn btn-dark">G#</button>
+            <button type="button" class="btn btn-dark"id="12">G#</button>
           </div>
         </div> 
     </div>
-    <script src="src/index.js"></script>
+    <script src="src/Game.js" type="module"></script>
     <script src="https://kit.fontawesome.com/8436eba030.js"></script>
   </body>
 </html>

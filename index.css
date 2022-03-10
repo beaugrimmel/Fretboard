@@ -40,16 +40,7 @@ body {
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-.stringDiv {
-  display: inline-flex;
-}
-
 #ansButtonsDiv {
   text-align: center;
   padding: 10px;
-}
-
-#note {
-  text-align: center;
-  padding: 2px;
 }
