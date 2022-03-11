@@ -1,3 +1,5 @@
+import Guess from "./Guess.js";
+
 export default class Board {
   constructor(tileSize) {
     this.tileSize = tileSize;
@@ -7,6 +9,10 @@ export default class Board {
 
     this.fretSelect = new Image();
     this.fretSelect.src = "imgs/fret-select.png";
+
+    this.selectedString = null;
+    this.selectedFret = null;
+    this.selectedNote = null;
   }
 
   // 0 - blank
@@ -17,6 +23,15 @@ export default class Board {
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  ];
+
+  notes = [
+    [9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8],
+    [4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2, 3],
+    [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    [7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6],
+    [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1],
+    [9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8],
   ];
 
   draw(ctx) {
@@ -42,6 +57,9 @@ export default class Board {
     var stringNum = this.#random(1, 6);
     var fretNum = this.#random(1, 12);
     this.map[stringNum - 1][fretNum - 1] = 1;
+    this.selectedString = stringNum;
+    this.selectedFret = fretNum;
+    this.selectedNote = this.notes[stringNum - 1][fretNum - 1];
   }
 
   #random(min, max) {
