@@ -7,8 +7,7 @@ export default class Board {
     this.fret = new Image();
     this.fret.src = "imgs/fret.png";
 
-    this.fretSelect = new Image();
-    this.fretSelect.src = "imgs/fret-select.png";
+    this.#loadImages();
 
     this.selectedString = null;
     this.selectedFret = null;
@@ -16,12 +15,15 @@ export default class Board {
   }
 
   // 0 - blank
+  // 1 - selected
+  // 2 - up dot
+  // 3 - down dot
   map = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+    [0, 0, 2, 0, 2, 0, 2, 0, 2, 0, 0, 1],
+    [0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 2],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   ];
 
@@ -42,7 +44,19 @@ export default class Board {
           this.#drawFret(ctx, col, row, this.tileSize);
         }
         if (tile === 1) {
+          this.#drawFretUp(ctx, col, row, this.tileSize);
+        }
+        if (tile === 2) {
+          this.#drawFretDn(ctx, col, row, this.tileSize);
+        }
+        if (tile === 3) {
           this.#drawFretSelect(ctx, col, row, this.tileSize);
+        }
+        if (tile === 4) {
+          this.#drawFretUpSelect(ctx, col, row, this.tileSize);
+        }
+        if (tile === 5) {
+          this.#drawFretDnSelect(ctx, col, row, this.tileSize);
         }
       }
     }
@@ -54,12 +68,29 @@ export default class Board {
   }
 
   selectRandomFret() {
+    // Clear current
     if (this.selectedFret != null && this.selectedString != null) {
-      this.map[this.selectedString - 1][this.selectedFret - 1] = 0;
+      if (this.map[this.selectedString - 1][this.selectedFret - 1] == 3)
+        this.map[this.selectedString - 1][this.selectedFret - 1] = 0;
+      if (this.map[this.selectedString - 1][this.selectedFret - 1] == 4)
+        this.map[this.selectedString - 1][this.selectedFret - 1] = 1;
+      if (this.map[this.selectedString - 1][this.selectedFret - 1] == 5)
+        this.map[this.selectedString - 1][this.selectedFret - 1] = 2;
     }
+
+    // Generate random
     var stringNum = this.#random(1, 6);
     var fretNum = this.#random(1, 12);
-    this.map[stringNum - 1][fretNum - 1] = 1;
+
+    // Set tile
+    if (this.map[stringNum - 1][fretNum - 1] == 0)
+      this.map[stringNum - 1][fretNum - 1] = 3;
+    if (this.map[stringNum - 1][fretNum - 1] == 1)
+      this.map[stringNum - 1][fretNum - 1] = 4;
+    if (this.map[stringNum - 1][fretNum - 1] == 2)
+      this.map[stringNum - 1][fretNum - 1] = 5;
+
+    // Set selcted atribs
     this.selectedString = stringNum;
     this.selectedFret = fretNum;
     this.selectedNote = this.notes[stringNum - 1][fretNum - 1];
@@ -79,6 +110,26 @@ export default class Board {
     );
   }
 
+  #drawFretUp(ctx, col, row, size) {
+    ctx.drawImage(
+      this.fretUp,
+      col * this.tileSize,
+      row * this.tileSize,
+      size,
+      size
+    );
+  }
+
+  #drawFretDn(ctx, col, row, size) {
+    ctx.drawImage(
+      this.fretDn,
+      col * this.tileSize,
+      row * this.tileSize,
+      size,
+      size
+    );
+  }
+
   #drawFretSelect(ctx, col, row, size) {
     ctx.drawImage(
       this.fretSelect,
@@ -87,5 +138,45 @@ export default class Board {
       size,
       size
     );
+  }
+
+  #drawFretUpSelect(ctx, col, row, size) {
+    ctx.drawImage(
+      this.fretUpSelect,
+      col * this.tileSize,
+      row * this.tileSize,
+      size,
+      size
+    );
+  }
+
+  #drawFretDnSelect(ctx, col, row, size) {
+    ctx.drawImage(
+      this.fretDnSelect,
+      col * this.tileSize,
+      row * this.tileSize,
+      size,
+      size
+    );
+  }
+
+  #loadImages() {
+    this.fret = new Image();
+    this.fret.src = "imgs/fret.png";
+
+    this.fretUp = new Image();
+    this.fretUp.src = "imgs/fret-dot-up.png";
+
+    this.fretDn = new Image();
+    this.fretDn.src = "imgs/fret-dot-dn.png";
+
+    this.fretSelect = new Image();
+    this.fretSelect.src = "imgs/fret-select.png";
+
+    this.fretUpSelect = new Image();
+    this.fretUpSelect.src = "imgs/fret-dot-up-select.png";
+
+    this.fretDnSelect = new Image();
+    this.fretDnSelect.src = "imgs/fret-dot-dn-select.png";
   }
 }
