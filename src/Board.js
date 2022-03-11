@@ -54,6 +54,9 @@ export default class Board {
   }
 
   selectRandomFret() {
+    if (this.selectedFret != null && this.selectedString != null) {
+      this.map[this.selectedString - 1][this.selectedFret - 1] = 0;
+    }
     var stringNum = this.#random(1, 6);
     var fretNum = this.#random(1, 12);
     this.map[stringNum - 1][fretNum - 1] = 1;

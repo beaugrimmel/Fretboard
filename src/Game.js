@@ -23,6 +23,7 @@ function game() {
   board.draw(ctx);
   if (guess.isCorrectGuess(board)) {
     console.log("Yes");
+    board.selectRandomFret();
   } else {
     console.log("No");
   }
