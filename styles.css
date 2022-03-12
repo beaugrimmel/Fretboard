@@ -1,0 +1,75 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+body {
+  background-color: rgb(175, 164, 164);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1em;
+  font-size: clamp(0.5rem, 2.5vmin, 1.5rem);
+}
+
+.note-selector {
+  display: grid;
+  grid-template-columns: repeat(14, minmax(auto, 1.25em));
+  grid-auto-rows: 2.5em;
+  gap: 0.25em;
+  justify-content: center;
+  margin-bottom: 5em;
+}
+
+.note {
+  grid-column: span 2;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(
+    var(--hue, 200),
+    var(--saturation, 1%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 51%))
+  );
+  color: white;
+  border-radius: 0.25em;
+}
+
+.space-large {
+  grid-column: span 2;
+}
+
+.note:hover,
+.key:focus {
+  --lightness-offset: 10%;
+}
+
+.note.wrong {
+  --hue: 15;
+  --lightness: 23%;
+  --saturation: 20%;
+}
+
+.note.correct {
+  --hue: 115;
+  --saturation: 50%;
+  --lightness: 47%;
+}
+
+.fretboard-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  flex-grow: 1;
+  grid-template-columns: repeat(12, 2.5em);
+  grid-template-rows: repeat(6, 2.5em);
+}
+
+.fret {
+  background-color: white;
+  border: 1px solid rgba(194, 190, 190, 0.25);
+}
