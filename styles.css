@@ -78,9 +78,3 @@ body {
   --lightness: 23%;
   --saturation: 20%;
 }
-
-.note.correct {
-  --hue: 115;
-  --saturation: 50%;
-  --lightness: 47%;
-}
