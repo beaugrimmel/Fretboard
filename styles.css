@@ -1,3 +1,4 @@
+/*  ---------------General--------------- */
 *,
 *::after,
 *::before {
@@ -15,6 +16,34 @@ body {
   font-size: clamp(0.5rem, 2.5vmin, 1.5rem);
 }
 
+/*  ---------------Title--------------- */
+.title {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+/*  ---------------Fretboard grid--------------- */
+.fretboard-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  flex-grow: 1;
+  grid-template-columns: repeat(12, 2.5em);
+  grid-template-rows: repeat(6, 2.5em);
+}
+
+.fret {
+  background-color: white;
+  border: 1px solid rgba(194, 190, 190, 0.25);
+}
+
+.fret.selected {
+  background-color: black;
+  border: 1px solid rgba(194, 190, 190, 0.25);
+}
+
+/*  ---------------Note selector--------------- */
 .note-selector {
   display: grid;
   grid-template-columns: repeat(14, minmax(auto, 1.25em));
@@ -39,10 +68,6 @@ body {
   border-radius: 0.25em;
 }
 
-.space-large {
-  grid-column: span 2;
-}
-
 .note:hover,
 .key:focus {
   --lightness-offset: 10%;
@@ -58,18 +83,4 @@ body {
   --hue: 115;
   --saturation: 50%;
   --lightness: 47%;
-}
-
-.fretboard-grid {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  flex-grow: 1;
-  grid-template-columns: repeat(12, 2.5em);
-  grid-template-rows: repeat(6, 2.5em);
-}
-
-.fret {
-  background-color: white;
-  border: 1px solid rgba(194, 190, 190, 0.25);
 }
