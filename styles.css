@@ -35,12 +35,13 @@ body {
 
 .fret {
   background-color: white;
-  border: 1px solid rgba(194, 190, 190, 0.25);
+  padding: 0;
+  margin: 0;
+  border: 0.01px solid rgba(194, 190, 190, 0.25);
 }
 
 .fret.selected {
   background-color: black;
-  border: 1px solid rgba(194, 190, 190, 0.25);
 }
 
 /*  ---------------Note selector--------------- */
