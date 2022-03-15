@@ -16,7 +16,6 @@ export default class Game {
   };
 
   pressNote(event) {
-    // TODO
     var note = event.target.dataset.note;
     if (note == this.correctAns) {
       this.numCorrect += 1;
