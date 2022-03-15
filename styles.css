@@ -1,0 +1,121 @@
+/*  ---------------General--------------- */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+body {
+  background: linear-gradient(
+    0deg,
+    rgb(212, 206, 86) 25%,
+    rgb(222, 212, 209) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1em;
+  font-size: clamp(0.5rem, 2.5vmin, 1.5rem);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+/*  ---------------Title area--------------- */
+.title {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+/*  ---------------Fretboard grid--------------- */
+
+.fretboard-container {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  flex-grow: 1;
+}
+
+.fretboard-shadow-box {
+  background: #f0ead661;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 2em;
+  padding: 4em;
+}
+
+.fretboard-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  flex-grow: 1;
+  grid-template-columns: repeat(12, 2.5em);
+  grid-template-rows: repeat(6, 2.5em);
+}
+
+.fret {
+  background-image: url("imgs/fret.png");
+  background-size: cover;
+}
+
+.fret.dotUp {
+  background-image: url("imgs/fret-dot-up.png");
+  background-size: cover;
+}
+
+.fret.dotDn {
+  background-image: url("imgs/fret-dot-dn.png");
+  background-size: cover;
+}
+
+.fret.selected {
+  background-image: url("imgs/fret-select.png");
+  background-size: cover;
+}
+
+/*  ---------------Note selector--------------- */
+.note-selector {
+  display: grid;
+  grid-template-columns: repeat(14, minmax(auto, 1.25em));
+  grid-auto-rows: 2.5em;
+  gap: 0.25em;
+  justify-content: center;
+  /* margin-bottom: 5em; */
+}
+
+.note {
+  grid-column: span 2;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(
+    var(--hue, 200),
+    var(--saturation, 1%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 51%))
+  );
+  color: white;
+  border-radius: 0.25em;
+}
+
+.note:hover,
+.key:focus {
+  --lightness-offset: 10%;
+}
+
+.note.wrong {
+  --hue: 15;
+  --lightness: 23%;
+  --saturation: 20%;
+}
