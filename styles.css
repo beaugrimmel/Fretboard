@@ -20,9 +20,15 @@ body {
   font-size: clamp(0.5rem, 2.5vmin, 1.5rem);
 }
 
-/*  ---------------Title--------------- */
+/*  ---------------Title area--------------- */
 .title {
   display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.score {
+  display: flex;
   justify-content: center;
   align-content: center;
 }

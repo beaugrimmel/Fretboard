@@ -18,7 +18,7 @@ export default class Game {
   pressNote(event) {
     var note = event.target.dataset.note;
     if (note == this.correctAns) {
-      this.numCorrect += 1;
+      this.increaseNumCorrect();
       this.resetNoteSelector();
       this.resetFretboard();
       this.generateFretToGuess();
@@ -27,7 +27,7 @@ export default class Game {
       console.log("Wrong, thats a " + note);
       event.target.classList.add("wrong");
     }
-    this.numGuesses += 1;
+    this.increaseNumGuesses();
     return;
   }
 
@@ -62,6 +62,16 @@ export default class Game {
       notes[i].classList.remove("wrong");
     }
     return;
+  }
+
+  increaseNumCorrect() {
+    this.numCorrect += 1;
+    document.getElementById("numCorrect").innerHTML = this.numCorrect;
+  }
+
+  increaseNumGuesses() {
+    this.numGuesses += 1;
+    document.getElementById("numGuesses").innerHTML = this.numGuesses;
   }
 }
 
