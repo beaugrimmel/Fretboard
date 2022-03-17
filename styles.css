@@ -84,6 +84,16 @@ img {
   background-size: cover;
 }
 
+.fret.dotUp.selected {
+  background-image: url("imgs/fret-dot-up-select.png");
+  background-size: cover;
+}
+
+.fret.dotDn.selected {
+  background-image: url("imgs/fret-dot-dn-select.png");
+  background-size: cover;
+}
+
 /*  ---------------Note selector--------------- */
 .note-selector {
   display: grid;
