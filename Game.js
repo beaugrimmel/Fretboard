@@ -7,7 +7,7 @@ export default class Game {
   }
 
   handleMouseClick = (event) => {
-    if (event.target.matches("[data-note]")) {
+    if (event.target.matches("[data-noteKey]")) {
       this.pressNote(event);
       return;
     }
@@ -16,7 +16,7 @@ export default class Game {
   };
 
   pressNote(event) {
-    var note = event.target.dataset.note;
+    var note = event.target.dataset.notekey;
     if (note == this.correctAns) {
       this.increaseNumCorrect();
       this.resetNoteSelector();
@@ -56,7 +56,7 @@ export default class Game {
 
   resetNoteSelector() {
     const noteSelector = document.querySelector("[data-note-selector]");
-    const notes = noteSelector.querySelectorAll("[data-note]");
+    const notes = noteSelector.querySelectorAll("[data-notekey]");
 
     for (var i = 0; i < notes.length; ++i) {
       notes[i].classList.remove("wrong");

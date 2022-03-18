@@ -5,18 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/8436eba030.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Fretboard Memorization Game</title>
   </head>
   <body>
+    <!-- TODO add a nav bar-->
+    <!-- <div class="navbar">
+      <i class="fa-solid fa-guitar"></i>
+      <div class="brand">Fretboard Memorization Games</div>
+      <div class="about">About</div>
+      <div class="games">Select Game</div>
+    </div> -->
+
     <div class="title">
       <h1>Identify the Note!</h1>
     </div>
+
     <div class="score">
       <div id="numCorrect">0</div>
       <div>/</div>
       <div id="numGuesses">0</div>
       &nbsp; Correct
     </div>
+
     <div class="fretboard-container">
       <div class="fretboard-shadow-box">
         <div data-fretboard-grid class="fretboard-grid">
@@ -103,20 +117,20 @@
 
     <div data-note-selector class="note-selector">
       <div class="space"></div>
-      <button class="note" data-note="Cs">C#</button>
-      <button class="note" data-note="Ds">D#</button>
+      <button class="note" data-notekey="Cs">C#</button>
+      <button class="note" data-notekey="Ds">D#</button>
       <div class="space"></div>
       <div class="space"></div>
-      <button class="note" data-note="Fs">F#</button>
-      <button class="note" data-note="Gs">G#</button>
-      <button class="note" data-note="As">A#</button>
-      <button class="note" data-note="C">C</button>
-      <button class="note" data-note="D">D</button>
-      <button class="note" data-note="E">E</button>
-      <button class="note" data-note="F">F</button>
-      <button class="note" data-note="G">G</button>
-      <button class="note" data-note="A">A</button>
-      <button class="note" data-note="B">B</button>
+      <button class="note" data-notekey="Fs">F#</button>
+      <button class="note" data-notekey="Gs">G#</button>
+      <button class="note" data-notekey="As">A#</button>
+      <button class="note" data-notekey="C">C</button>
+      <button class="note" data-notekey="D">D</button>
+      <button class="note" data-notekey="E">E</button>
+      <button class="note" data-notekey="F">F</button>
+      <button class="note" data-notekey="G">G</button>
+      <button class="note" data-notekey="A">A</button>
+      <button class="note" data-notekey="B">B</button>
     </div>
   </body>
   <script src="Game.js" type="module"></script>
