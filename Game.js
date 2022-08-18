@@ -13,8 +13,12 @@ export default class Game {
     }
 
     if (event.target.id == "hideAbout") {
-      console.log("got here!");
       this.hideAbout(event);
+      return;
+    }
+
+    if (event.target.id == "changeGame") {
+      this.changeGame(event);
       return;
     }
   };
@@ -22,6 +26,18 @@ export default class Game {
   hideAbout(event) {
     const about = document.getElementById("aboutSection");
     about.style.display = "none";
+  }
+
+  hideSecondGame() {
+    const titleTwo = document.getElementById("titleTwo");
+    titleTwo.classList.toggle("hide");
+  }
+
+  changeGame(event) {
+    const titleOne = document.getElementById("titleOne");
+    titleOne.classList.toggle("hide");
+    const titleTwo = document.getElementById("titleTwo");
+    titleTwo.classList.toggle("hide");
   }
 
   pressNote(event) {
@@ -90,4 +106,5 @@ function myFunction() {
 
 var game = new Game();
 game.generateFretToGuess();
+game.hideSecondGame();
 console.log("Hey cheater... the correct answer is " + game.correctAns);

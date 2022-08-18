@@ -38,6 +38,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  padding: 1em;
 }
 
 /*  ---------------Navbar area--------------- */
@@ -52,6 +53,10 @@ body {
   align-content: center;
 }
 
+.title.hide {
+  display: none;
+}
+
 .score {
   display: flex;
   justify-content: center;
@@ -59,6 +64,14 @@ body {
 }
 
 /*  ---------------Fretboard grid--------------- */
+
+.changeGame {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  flex-grow: 1;
+  padding: 0.5em;
+}
 
 .fretboard-container {
   display: grid;
@@ -73,6 +86,7 @@ body {
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border-radius: 2em;
   padding: 4em;
+  padding-top: 2em;
 }
 
 .fretboard-grid {
