@@ -12,8 +12,17 @@ export default class Game {
       return;
     }
 
-    // TODO - handle other possible mouse clicks
+    if (event.target.id == "hideAbout") {
+      console.log("got here!");
+      this.hideAbout(event);
+      return;
+    }
   };
+
+  hideAbout(event) {
+    const about = document.getElementById("aboutSection");
+    about.style.display = "none";
+  }
 
   pressNote(event) {
     var note = event.target.dataset.notekey;
@@ -73,6 +82,10 @@ export default class Game {
     this.numGuesses += 1;
     document.getElementById("numGuesses").innerHTML = this.numGuesses;
   }
+}
+
+function myFunction() {
+  alert("hey!");
 }
 
 var game = new Game();
