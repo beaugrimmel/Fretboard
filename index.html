@@ -13,16 +13,16 @@
   </head>
   <body>
     <div id='aboutSection' class="about">
-      <h3>Enjoy this Fretboard Memorization Aid!</h3>
+      <h2>Enjoy this Fretboard Memorization Aid!</h3>
       <h6>
-        Too often guitar players don't learn the notes on the neck. Doing this with any other instrument would be ridiculous but for some reason its common with guitar. 
-        This tool can help practice when you dont have a guitar laying around.
-      <h6>
+        Too often guitar players don't learn the notes on the neck. Doing this with any other instrument would be ridiculous but for some reason it's common with guitar. 
+        This tool can help you practice when you don't have a guitar laying around.
+      <h4>
         There are two variations to practice (inspired by
         JustinGuitar).
-      </h6>
-      <h6>Game 1 - Identify the Note (gives a random fret and string)</h6>
-      <h6>Game 2 - Find the Frets (find all the note locations on the neck)</h6>
+      </h4>
+      <h6>Game 1 - Identify the Note (Prompts a random fret and string)</h6>
+      <h6>Game 2 - Find the Frets (Find all the note locations on the neck)</h6>
       <button id="hideAbout">Start Playing</button>
     </div>
 
@@ -34,6 +34,8 @@
       <h1>Find the Notes!</h1>
     </div>
 
+
+
     <div class="score">
       <div id="numCorrect">0</div>
       <div>/</div>
@@ -44,9 +46,7 @@
     <div class="fretboard-container">
       <div class="fretboard-shadow-box">
 
-        <div class="changeGame">
-          <button id="changeGame">Change Game Mode</button>
-        </div>
+        
 
         <div data-fretboard-grid class="fretboard-grid">
 
@@ -130,6 +130,17 @@
         </div>
       </div>
     </div>
+    <div class="infoButtons">
+      <div class="space"></div>
+      <div class="space"></div>
+      <div class="space"></div>
+      <button>How to play</button>
+      <div class="space"></div>
+      <button id="changeGame">Change Game Mode</button>
+      <div class="space"></div>
+      <div class="space"></div>
+      <div class="space"></div>
+    </div>
 
     <div data-note-selector class="note-selector">
       <div class="space"></div>
@@ -148,6 +159,9 @@
       <button class="note" data-notekey="A">A</button>
       <button class="note" data-notekey="B">B</button>
     </div>
+
+    
+
   </body>
-  <script src="Game.js" type="module"></script>
+  <script src="Main.js" type="module"></script>
 </html>
