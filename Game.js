@@ -24,6 +24,11 @@ export default class Game {
       return;
     }
 
+    if (event.target.id == "showAbout") {
+      this.showAbout(event);
+      return;
+    }
+
     if (event.target.id == "changeGame") {
       this.changeGame(event);
       return;
@@ -33,6 +38,11 @@ export default class Game {
   hideAbout(event) {
     const about = document.getElementById("aboutSection");
     about.style.display = "none";
+  }
+
+  showAbout(event) {
+    const about = document.getElementById("aboutSection");
+    about.style.display = "";
   }
 
   hideSecondGame() {
