@@ -109,6 +109,7 @@ export default class Game {
         this.resetFretboard();
         this.resetNoteSelector();
         this.generateNoteToGuess();
+        this.stringsFound = 0;
       }
     } else {
       event.target.classList.add("wrong");
